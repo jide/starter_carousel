@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Starter: Carousel feature.
+ */
+
+include_once 'starter_carousel.features.inc';

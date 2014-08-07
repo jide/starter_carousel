@@ -1,0 +1,13 @@
+name = Starter: Carousel
+description = Starter Carousel.
+core = 7.x
+package = Starter
+version = 7.x-1.0
+project = starter_carousel
+dependencies[] = starter_frontpage
+features[features_api][] = api:2
+features[features_override_items][] = context.frontpage
+features[features_overrides][] = context.frontpage.reactions|block
+features[features_overrides][] = views_view.frontpage.display|default|display_options|row_options
+features[features_overrides][] = views_view.frontpage.display|default|display_options|use_more_always
+project path = sites/all/modules/features
