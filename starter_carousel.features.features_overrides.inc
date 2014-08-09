@@ -12,15 +12,11 @@ function starter_carousel_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
-  $overrides["context.frontpage.reactions|block"] = array(
-    'blocks' => array(
-      'views-carousel-block' => array(
-        'module' => 'views',
-        'delta' => 'carousel-block',
-        'region' => 'content',
-        'weight' => -10,
-      ),
-    ),
+  $overrides["context.frontpage.reactions|block|blocks|views-carousel-block"] = array(
+    'module' => 'views',
+    'delta' => 'carousel-block',
+    'region' => 'content',
+    'weight' => -10,
   );
 
   // Exported overrides for: views_view

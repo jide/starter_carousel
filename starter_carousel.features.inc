@@ -16,15 +16,11 @@ function starter_carousel_views_api($module = NULL, $api = NULL) {
  */
 function starter_carousel_context_default_contexts_alter(&$data) {
   if (isset($data['frontpage'])) {
-    $data['frontpage']->reactions['block'] = array(
-      'blocks' => array(
-        'views-carousel-block' => array(
-          'module' => 'views',
-          'delta' => 'carousel-block',
-          'region' => 'content',
-          'weight' => -10,
-        ),
-      ),
+    $data['frontpage']->reactions['block']['blocks']['views-carousel-block'] = array(
+      'module' => 'views',
+      'delta' => 'carousel-block',
+      'region' => 'content',
+      'weight' => -10,
     ); /* WAS: '' */
   }
 }
