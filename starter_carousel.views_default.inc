@@ -30,21 +30,20 @@ function starter_carousel_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
   $handler->display->display_options['row_plugin'] = 'views_bootstrap_carousel_plugin_rows';
-  $handler->display->display_options['row_options']['image'] = 'rendered';
+  $handler->display->display_options['row_options']['image'] = 'field_image';
   $handler->display->display_options['row_options']['title'] = 'title_field';
   $handler->display->display_options['row_options']['description'] = 'body';
-  /* Relationship: File Usage: File */
-  $handler->display->display_options['relationships']['node_to_file']['id'] = 'node_to_file';
-  $handler->display->display_options['relationships']['node_to_file']['table'] = 'file_usage';
-  $handler->display->display_options['relationships']['node_to_file']['field'] = 'node_to_file';
-  /* Field: File: Rendered */
-  $handler->display->display_options['fields']['rendered']['id'] = 'rendered';
-  $handler->display->display_options['fields']['rendered']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['rendered']['field'] = 'rendered';
-  $handler->display->display_options['fields']['rendered']['relationship'] = 'node_to_file';
-  $handler->display->display_options['fields']['rendered']['label'] = '';
-  $handler->display->display_options['fields']['rendered']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered']['file_view_mode'] = 'landscape';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'file_view_mode' => 'landscape',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -78,6 +77,11 @@ function starter_carousel_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -89,7 +93,6 @@ function starter_carousel_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('File'),
     t('Block'),
   );
   $export['carousel'] = $view;
