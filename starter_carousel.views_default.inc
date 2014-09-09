@@ -40,7 +40,8 @@ function starter_carousel_views_default_views() {
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
   $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
   $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'frontpage_carousel' => 'frontpage_carousel',
+    'carousel' => 'carousel',
+    'frontpage_carousel' => 0,
   );
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';

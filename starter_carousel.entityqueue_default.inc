@@ -13,8 +13,8 @@ function starter_carousel_entityqueue_default_queues() {
   $queue = new EntityQueue();
   $queue->disabled = FALSE; /* Edit this to true to make a default queue disabled initially */
   $queue->api_version = 1;
-  $queue->name = 'frontpage_carousel';
-  $queue->label = 'Frontpage carousel';
+  $queue->name = 'carousel';
+  $queue->label = 'Carousel';
   $queue->language = 'en';
   $queue->handler = 'simple';
   $queue->target_type = 'node';
@@ -22,9 +22,9 @@ function starter_carousel_entityqueue_default_queues() {
     'target_bundles' => array(),
     'min_size' => '0',
     'max_size' => '0',
-    'act_as_queue' => 0,
+    'act_as_queue' => 1,
   );
-  $export['frontpage_carousel'] = $queue;
+  $export['carousel'] = $queue;
 
   return $export;
 }
